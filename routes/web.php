@@ -1,7 +1,8 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Models\Bill;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,18 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('bills',[
         'heading' => 'Latest bills',
-        'bills' => [
-            [
-            'id' => 1,
-            'title' => 'bill one',
-            'description' => 'lorem'
-        ],
-            [
-            'id' => 2,
-            'title' => 'bill two',
-            'description' => 'lorem'
-        ],
-
-        ]
+        'bills' =>  Bill::all()
     ]);
 });
