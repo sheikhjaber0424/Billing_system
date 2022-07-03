@@ -5,7 +5,9 @@
  @endif
  
 @foreach($bills as $bill)
-<h2>{{$bill['title']  }}</h2>
+<h2>
+   <a href="/bills/{{ $bill['id'] }}"> {{$bill['title']}}</a>
+</h2>
 <p>{{$bill['description']  }}</p>
 
 @endforeach

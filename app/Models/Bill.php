@@ -18,4 +18,17 @@ class Bill {
                 ];
               
     }
+
+
+    public static function find($id){
+       $bills = self::all();
+
+
+       foreach($bills as $bill){
+        if($bill['id'] == $id){
+            return $bill;
+           }
+       }
+       
+    }
 }

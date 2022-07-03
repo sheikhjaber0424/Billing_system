@@ -14,9 +14,19 @@ use App\Models\Bill;
 |
 */
 
+
+//All Bills
 Route::get('/', function () {
     return view('bills',[
         'heading' => 'Latest bills',
         'bills' =>  Bill::all()
+    ]);
+});
+
+//Single Bill
+Route::get('/bills/{id}', function($id){
+
+    return view('bill', [
+        'bill' => Bill::find($id)
     ]);
 });
