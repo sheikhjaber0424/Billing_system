@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\InvoiceController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\invoice;
@@ -16,17 +17,7 @@ use App\Models\invoice;
 
 
 //All Bills
-Route::get('/', function () {
-    return view('bills',[
-        'heading' => 'Latest bills',
-        'bills' =>  invoice::all()
-    ]);
-});
+Route::get('/', [InvoiceController::class,'index']);
 
 //Single Bill
-Route::get('/bills/{id}', function($id){
-
-    return view('bill', [
-        'bill' => invoice::find($id)
-    ]);
-});
+Route::get('/invoices/{id}',[InvoiceController::class,'show']);

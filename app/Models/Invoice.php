@@ -19,15 +19,5 @@ class Invoice extends Model
     {
         return $this->hasMany(InvoiceProduct::class);
     }
-    public static function find($id){
-        $invoices = self::all();
-  
- 
-        foreach($invoices as $invoice){
-         if($invoice['id'] == $id){
-             return $invoice;
-            }
-        }
-        
-     }
+   
 }
