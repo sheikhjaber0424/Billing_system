@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Models\Bill;
+use App\Models\invoice;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,7 +19,7 @@ use App\Models\Bill;
 Route::get('/', function () {
     return view('bills',[
         'heading' => 'Latest bills',
-        'bills' =>  Bill::all()
+        'bills' =>  invoice::all()
     ]);
 });
 
@@ -27,6 +27,6 @@ Route::get('/', function () {
 Route::get('/bills/{id}', function($id){
 
     return view('bill', [
-        'bill' => Bill::find($id)
+        'bill' => invoice::find($id)
     ]);
 });
